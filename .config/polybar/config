@@ -1,0 +1,36 @@
+;=====================================================
+;     File Includes
+;=====================================================
+
+[section/base]
+include-file = /home/jag/.config/polybar/master.conf
+include-file = /home/jag/.config/polybar/modules.conf
+
+
+;=====================================================
+;     Bspwm Bars
+;=====================================================
+
+[bar/left]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor = DVI-I-1
+
+modules-left   = bspwm menu 
+modules-center = network clock
+modules-right  = updates pulseaudio
+;modules-left   = bspwm menu updates-arch 
+;modules-center = network clock volume-bar
+;modules-right  = ${env:POLYBAR_MODULES:coreuse kernel}
+
+[bar/right]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor = HDMI-0
+
+modules-left   = bspwm menu 
+modules-center = network clock
+modules-right  = tray weather
+
